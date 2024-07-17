@@ -1,0 +1,66 @@
+<!-- Author: Zaryab Hussain 
+AICP Internship Web Designing Task 2 
+To-do Task Application -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-do Task Application</title>
+    <!-- Link to External CSS File -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="intro">
+      <h1>Welcome to your To-do Task Application</h1>
+    </div>
+    <div class="menu">
+      <button onclick="showSection('addTask')">Add Task</button>
+      <button onclick="showSection('taskList')">Task List</button>
+      <button onclick="showSection('deletedTask')">Deleted Task</button>
+      <div class="theme-switcher">
+        <h2>Theme Select</h2>
+        <select id="themeSelect" onchange="changeTheme(this.value)">
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+          <option value="blue">Blue</option>
+          <option value="purple">Purple</option>
+        </select>
+      </div>
+    </div>
+    <div id="addTask" class="section">
+      <h2>Add Task</h2>
+      <form id="taskForm">
+        <div class="form-group">
+          <label for="taskTitle">Task Title</label>
+          <input type="text" id="taskTitle" name="taskTitle" required />
+        </div>
+        <div class="form-group">
+          <label for="taskDescription">Task Description</label>
+          <input
+            type="text"
+            id="taskDescription"
+            name="taskDescription"
+            required
+          />
+        </div>
+        <button type="button" onclick="addTask()">Add Task</button>
+      </form>
+    </div>
+    <div id="taskList" class="section" style="display: none">
+      <h2>Task List</h2>
+      <div id="taskListContent">No Task</div>
+    </div>
+    <div id="deletedTask" class="section" style="display: none">
+      <h2>Deleted Task</h2>
+      <div id="deletedTaskContent">No Task</div>
+    </div>
+
+    <footer>
+      <p>Created by Zarayb Husssain</p>
+    </footer>
+    <!-- Link to External JS File -->
+    <script src="script.js"></script>
+  </body>
+</html>
